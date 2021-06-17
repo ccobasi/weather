@@ -133,3 +133,11 @@ const weatherReport = (mainTemp, cityName, countryName, lowTemp, highTemp,
 
   cityContainer.appendChild(cloudContainer);
 };
+
+const error = () => {
+  const errorDiv = document.getElementById('error');
+  const errorText = document.createTextNode('Please enter a valid city or check your spelling.');
+  errorDiv.appendChild(errorText);
+};
+
+export { error, weatherReport };
