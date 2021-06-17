@@ -1,24 +1,24 @@
 const weatherReport = (mainTemp, cityName, countryName, lowTemp, highTemp,
-    humidity, pressure, description) => {
-    document.querySelector('#body').innerHTML = '';
-    // card Container
-    const cardContainer = document.createElement('div');
-    cardContainer.setAttribute('class', 'weather-card mt-5 border shadow');
-  
-    const body = document.getElementById('body');
-    body.appendChild(cardContainer);
-  
-    // cloud icon
-    const cloudIcon = document.createElement('i');
-    cloudIcon.setAttribute('class', 'fas fa-cloud-sun-rain cloud');
-    cardContainer.appendChild(cloudIcon);
-  
-    // data Container
-    const dataContainer = document.createElement('div');
-    dataContainer.setAttribute('class', 'd-flex justify-content-center color-font');
-    cardContainer.appendChild(dataContainer);
+  humidity, pressure, description) => {
+  document.querySelector('#body').innerHTML = '';
+  // card Container
+  const cardContainer = document.createElement('div');
+  cardContainer.setAttribute('class', 'weather-card mt-5 border shadow');
 
-    // max temperature container
+  const body = document.getElementById('body');
+  body.appendChild(cardContainer);
+
+  // cloud icon
+  const cloudIcon = document.createElement('i');
+  cloudIcon.setAttribute('class', 'fas fa-cloud-sun-rain cloud');
+  cardContainer.appendChild(cloudIcon);
+
+  // data Container
+  const dataContainer = document.createElement('div');
+  dataContainer.setAttribute('class', 'd-flex justify-content-center color-font');
+  cardContainer.appendChild(dataContainer);
+
+  // max temperature container
   const maxTempContainer = document.createElement('div');
 
   const maxTemp = document.createElement('h4');
@@ -91,3 +91,45 @@ const weatherReport = (mainTemp, cityName, countryName, lowTemp, highTemp,
   pressureContainer.appendChild(minPressureValue);
 
   dataContainer.appendChild(pressureContainer);
+
+  // city container
+  const cityContainer = document.createElement('div');
+  cityContainer.setAttribute('class', 'd-flex justify-content-center');
+  cardContainer.appendChild(cityContainer);
+
+  // main city
+  const mainCity = document.createElement('div');
+  mainCity.setAttribute('class', 'pe-5');
+  cityContainer.appendChild(mainCity);
+
+  // value city
+  const valueCityparagraph = document.createElement('p');
+  valueCityparagraph.setAttribute('class', 'main color-white');
+  valueCityparagraph.setAttribute('id', 'main-temp');
+  const valueCity = document.createTextNode(`${mainTemp}°C`);
+  valueCityparagraph.appendChild(valueCity);
+  mainCity.appendChild(valueCityparagraph);
+
+  // city paragraph
+  const cityparagraph = document.createElement('p');
+  cityparagraph.setAttribute('class', 'fs-3 color-white');
+  const city = document.createTextNode(`${cityName}, ${countryName}`);
+  cityparagraph.appendChild(city);
+  mainCity.appendChild(cityparagraph);
+
+  // line
+  const line = document.createElement('div');
+  line.setAttribute('class', 'line');
+  cityContainer.appendChild(line);
+
+  // clouds
+  const cloudContainer = document.createElement('div');
+
+  const cloudParagraph = document.createElement('p');
+  cloudParagraph.setAttribute('class', 'main-desc ps-5 color-white');
+  const cloud = document.createTextNode(description);
+  cloudParagraph.appendChild(cloud);
+  cloudContainer.appendChild(cloudParagraph);
+
+  cityContainer.appendChild(cloudContainer);
+};
