@@ -7,18 +7,14 @@ buttonDiv.style.display = 'none';
 const bgOne = document.querySelector('.body-one');
 
 const changeBackground = (temp) => {
-  if (temp.description === 'cloudy') {
-    bgOne.style.backgroundImage = 'url(./images/cloud.gif)';
-  } else if (temp.description === 'rain') {
-    bgOne.style.backgroundImage = 'url(./images/rain.gif)';
-  } else if (temp.description === 'sun') {
-    bgOne.style.backgroundImage = 'url(./images/sunligth.jpg)';
-  } else if (temp.description === 'thunder') {
-    bgOne.style.backgroundImage = 'url(./images/thunder.gif)';
-  } else if (temp.description === 'fog') {
-    bgOne.style.backgroundImage = 'url(./images/fog.gif)';
+  if (temp <= 20) {
+    bgOne.style.backgroundImage = 'rgb(137, 202, 153)';
+  } else if (temp > 20 <= 25) {
+    bgOne.style.backgroundColor = 'rgb(245, 217, 126)';
+  } else if (temp > 25 <= 30) {
+    bgOne.style.backgroundColor = 'rgb(44, 241, 248)';
   } else {
-    bgOne.style.backgroundImage = 'url(./images/snow.gif)';
+    bgOne.style.backgroundColor = 'rgb(235, 122, 184)';
   }
 };
 
