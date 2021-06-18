@@ -12,15 +12,9 @@
 
  ## Built With
 
- - HTML
- - CSS
- - Javascript 
- - API
- - Webpack
- - Used the DOM Manipulation.
- - Images
- - Icons
- - Linters
+- Javascript.
+- HTML.
+- CSS
 
  ## How It work 
   - Frist Open Your terminal and paste : git clone git@github com:ccobasi/weather.git.
